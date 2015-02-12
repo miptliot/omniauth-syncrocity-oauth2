@@ -2,7 +2,7 @@ require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
-    class GoogleOauth2 < OmniAuth::Strategies::OAuth2
+    class ChronocityOauth2 < OmniAuth::Strategies::OAuth2
       option :name, 'chronocity_oauth2'
 
       option :skip_friends, true
@@ -11,7 +11,7 @@ module OmniAuth
 
       option :client_options, {
         :site          => 'http://liot.mipt.ru',
-        :authorize_url => '/o/oauth/authorize',
+        :authorize_url => '/oauth/authorize',
         :token_url     => '/oauth/token'
       }
 

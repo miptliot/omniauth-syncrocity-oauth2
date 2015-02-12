@@ -22,7 +22,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-You can now access the OmniAuth Google OAuth2 URL: `/auth/chronocity_oauth2`
+You can now access the OmniAuth Chronocity OAuth2 URL: `/auth/chronocity_oauth2`
 
 For more examples please check out `examples/omni_auth.rb`
 
