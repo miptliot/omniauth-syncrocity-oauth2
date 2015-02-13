@@ -22,7 +22,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-You can now access the OmniAuth Chronocity OAuth2 URL: `/auth/syncrocity_oauth2`
+You can now access the OmniAuth SyncroCity OAuth2 URL: `/auth/syncrocity_oauth2`
 
 For more examples please check out `examples/omni_auth.rb`
 
