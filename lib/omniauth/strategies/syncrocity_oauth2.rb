@@ -2,8 +2,8 @@ require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
-    class ChronocityOauth2 < OmniAuth::Strategies::OAuth2
-      option :name, 'chronocity_oauth2'
+    class SyncrocityOauth2 < OmniAuth::Strategies::OAuth2
+      option :name, 'syncrocity_oauth2'
 
       option :skip_friends, true
 

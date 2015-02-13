@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'omniauth-chronocity-oauth2'
+require 'omniauth-syncrocity-oauth2'
 
 describe OmniAuth::Strategies::ChronocityOauth2 do
   let(:request) { double('Request', :params => {}, :cookies => {}, :env => {}) }
