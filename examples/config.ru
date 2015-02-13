@@ -6,7 +6,7 @@ require 'rubygems'
 require 'bundler'
 require 'sinatra'
 require 'omniauth'
-require 'omniauth-chronocity-oauth2'
+require 'omniauth-syncrocity-oauth2'
 
 # Do not use for production code.
 # This is only to make setup easier when running through the sample.
@@ -19,14 +19,14 @@ class App < Sinatra::Base
   get '/' do
     <<-HTML
     <ul>
-      <li><a href='/auth/chronocity_oauth2'>Sign in with Chronocity</a></li>
+      <li><a href='/auth/syncrocity_oauth2'>Sign in with Chronocity</a></li>
     </ul>
     HTML
   end
 
   get '/auth/:provider/callback' do
     content_type 'text/plain'
-    request.env['omniauth.auth'].to_hash.inspect rescue "No Data"
+    omniauth = request.env['omniauth.auth'].to_hash
   end
 
   get '/auth/failure' do
@@ -35,11 +35,11 @@ class App < Sinatra::Base
   end
 end
 
-use Rack::Session::Cookie, :secret => ENV['RACK_COOKIE_SECRET']
+use Rack::Session::Cookie, :secret => 'secret' #ENV['RACK_COOKIE_SECRET']
 
 use OmniAuth::Builder do
   # For additional provider examples please look at 'omni_auth.rb'
-  provider :chronocity_oauth2, ENV['CHRONOCITY_KEY'], ENV['CHRONOCITY_SECRET'], {}
+  provider :syncrocity_oauth2, ENV['SYNCROCITY_KEY'], ENV['SYNCROCITY_SECRET'], {}
 end
 
 run App.new

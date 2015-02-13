@@ -6,7 +6,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # Default usage, this will give you offline access and a refresh token
   # using default scopes 'email' and 'profile'
   #
-  provider :chronocity_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET'], {
+  provider :syncrocity_oauth2, ENV['SYNCROCITY_KEY'], ENV['SYNCROCITY_SECRET'], {
     :scope => 'email,profile'
   }
 

@@ -1,1 +1,1 @@
-require File.join('omniauth', 'chronocity_oauth2')
+require File.join('omniauth', 'syncrocity_oauth2')

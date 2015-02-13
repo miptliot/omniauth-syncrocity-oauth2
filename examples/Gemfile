@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'omniauth-chronocity-oauth2'
+gem 'omniauth-syncrocity-oauth2'

@@ -1,13 +1,13 @@
-# OmniAuth Chronocity OAuth2 Strategy
+# OmniAuth Syncrocity OAuth2 Strategy
 
-Strategy to authenticate with Chronocity via OAuth2 in OmniAuth.
+Strategy to authenticate with Syncrocity via OAuth2 in OmniAuth.
 
 ## Installation
 
 Add to your `Gemfile`:
 
 ```ruby
-gem "omniauth-chronocity-oauth2"
+gem "omniauth-syncrocity-oauth2"
 ```
 
 Then `bundle install`.
@@ -18,16 +18,16 @@ Here's an example for adding the middleware to a Rails app in `config/initialize
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :chronocity_oauth2, ENV["CHRONOCITY_CLIENT_ID"], ENV["CHRONOCITY_CLIENT_SECRET"]
+  provider :syncrocity_oauth2, ENV["SYNCROCITY_CLIENT_ID"], ENV["SYNCROCITY_CLIENT_SECRET"]
 end
 ```
 
-You can now access the OmniAuth Chronocity OAuth2 URL: `/auth/chronocity_oauth2`
+You can now access the OmniAuth Chronocity OAuth2 URL: `/auth/syncrocity_oauth2`
 
 For more examples please check out `examples/omni_auth.rb`
 
 ## Build Status
-[![Build Status](https://travis-ci.org/zquestz/omniauth-chronocity-oauth2.png)](https://travis-ci.org/zquestz/omniauth-chronocity-oauth2)
+[![Build Status](https://travis-ci.org/zquestz/omniauth-syncrocity-oauth2.png)](https://travis-ci.org/zquestz/omniauth-syncrocity-oauth2)
 
 
 ## License

@@ -144,40 +144,6 @@ describe OmniAuth::Strategies::ChronocityOauth2 do
     end
 
     describe 'scope' do
-      it 'should expand scope shortcuts' do
-        @options = {:scope => 'plus.me'}
-        expect(subject.authorize_params['scope']).to eq('https://www.googleapis.com/auth/plus.me')
-      end
-
-      it 'should leave base scopes as is' do
-        @options = {:scope => 'profile'}
-        expect(subject.authorize_params['scope']).to eq('profile')
-      end
-
-      it 'should join scopes' do
-        @options = {:scope => 'profile,email'}
-        expect(subject.authorize_params['scope']).to eq('profile email')
-      end
-
-      it 'should deal with whitespace when joining scopes' do
-        @options = {:scope => 'profile, email'}
-        expect(subject.authorize_params['scope']).to eq('profile email')
-      end
-
-      it 'should set default scope to email,profile' do
-        expect(subject.authorize_params['scope']).to eq('email profile')
-      end
-
-      it 'should support space delimited scopes' do
-        @options = {:scope => 'profile email'}
-        expect(subject.authorize_params['scope']).to eq('profile email')
-      end
-
-      it "should support extremely badly formed scopes" do
-        @options = {:scope => 'profile email,foo,steve yeah http://example.com'}
-        expect(subject.authorize_params['scope']).to eq('profile email https://www.googleapis.com/auth/foo https://www.googleapis.com/auth/steve https://www.googleapis.com/auth/yeah http://example.com')
-      end
-    end
 
     describe 'state' do
       it 'should set the state parameter' do

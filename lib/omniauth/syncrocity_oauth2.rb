@@ -1,0 +1,1 @@
+require File.join('omniauth', 'strategies', 'syncrocity_oauth2')
