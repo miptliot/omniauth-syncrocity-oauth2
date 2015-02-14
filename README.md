@@ -18,7 +18,7 @@ Here's an example for adding the middleware to a Rails app in `config/initialize
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :syncrocity_oauth2, ENV["SYNCROCITY_CLIENT_ID"], ENV["SYNCROCITY_CLIENT_SECRET"]
+  provider :syncrocity_oauth2, ENV["SYNCROCITY_CLIENT_ID"], ENV["SYNCROCITY_CLIENT_SECRET"], ENV["SYNCROCITY_URL"]
 end
 ```
 

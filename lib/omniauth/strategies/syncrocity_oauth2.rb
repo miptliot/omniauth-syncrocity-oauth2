@@ -10,10 +10,16 @@ module OmniAuth
       option :authorize_options, [:access_type, :hd, :login_hint, :prompt, :request_visible_actions, :redirect_uri]
 
       option :client_options, {
-        :site          => 'http://liot.mipt.ru',
         :authorize_url => '/oauth/authorize',
         :token_url     => '/oauth/token'
       }
+
+      args [:client_id, :client_secret, :site]
+
+      def initialize(app, *args, &block) # rubocop:disable UnusedMethodArgument
+        super
+        options.client_options[:site] = options.site
+      end
 
       def authorize_params
         super.tap do |params|
@@ -43,7 +49,7 @@ module OmniAuth
       end
 
       def user_info(access_token)
-        raw_response = client.request(:get, 'http://liot.mipt.ru/api/me', :params => {
+        raw_response = client.request(:get, options.client_options[:site] + '/api/me', :params => {
           :access_token => access_token
         }).parsed
       end
