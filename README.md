@@ -27,7 +27,7 @@ You can now access the OmniAuth SyncroCity OAuth2 URL: `/auth/syncrocity_oauth2`
 For more examples please check out `examples/omni_auth.rb`
 
 ## Build Status
-[![Build Status](https://travis-ci.org/zquestz/omniauth-syncrocity-oauth2.png)](https://travis-ci.org/zquestz/omniauth-syncrocity-oauth2)
+[![Build Status](https://travis-ci.org/miptliot/omniauth-syncrocity-oauth2.svg)](https://travis-ci.org/miptliot/omniauth-syncrocity-oauth2)
 
 
 ## License
