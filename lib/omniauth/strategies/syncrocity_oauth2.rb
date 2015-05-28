@@ -29,14 +29,24 @@ module OmniAuth
         end
       end
 
+      info do
+        {
+          :name => "#{user_info['name']} #{user_info['surname']}",
+          :email => user_info['email'],
+          :first_name => user_info['name'],
+          :last_name => user_info['surname'],
+          :image => user_info['image'],
+        }
+      end
+
       extra do
         hash = {}
-        hash[:info] = user_info(access_token.token)
+        hash[:info] = user_info
         prune! hash
       end
 
       uid do
-        user_info(access_token.token)['id']
+        user_info['id']
       end
 
       private
@@ -48,9 +58,9 @@ module OmniAuth
         end
       end
 
-      def user_info(access_token)
+      def user_info
         raw_response = client.request(:get, options.client_options[:site] + '/api/me', :params => {
-          :access_token => access_token
+          :access_token => access_token.token
         }).parsed
       end
     end
