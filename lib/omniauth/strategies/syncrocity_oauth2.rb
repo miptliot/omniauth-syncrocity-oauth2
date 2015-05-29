@@ -14,11 +14,12 @@ module OmniAuth
         :token_url     => '/oauth/token'
       }
 
-      args [:client_id, :client_secret, :site]
+      args [:client_id, :client_secret, :site, :mail_domain]
 
       def initialize(app, *args, &block) # rubocop:disable UnusedMethodArgument
         super
         options.client_options[:site] = options.site
+        options.client_options[:main_domain] = options.mail_domain
       end
 
       def authorize_params
@@ -30,9 +31,15 @@ module OmniAuth
       end
 
       info do
+        if user_info['email'] == nil
+          mail = "#{uid}@#{options.client_options[:main_domain]}"
+        else
+          mail = user_info['email']
+        end
+
         {
           :name => "#{user_info['name']} #{user_info['surname']}",
-          :email => user_info['email'],
+          :email => mail,
           :first_name => user_info['name'],
           :last_name => user_info['surname'],
           :image => user_info['image'],
